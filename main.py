@@ -37,11 +37,6 @@ class Features(BaseModel):
 
 
 
-@app.get('/')
-def greet():
-    return "Hello Guyss"
-
-
 @app.post('/predict')
 def predict(features: Features):
     row = pd.DataFrame([features.dict()], columns=COLUMNS)
